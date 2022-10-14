@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BK_Tool", "BK_Tool.csproj", "{B867F15C-D67D-4CB8-9A3A-9088685C5F77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LisRead", "..\LisRead\LisRead.csproj", "{863FD347-C605-402C-94D3-BB44E2C1F60E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B867F15C-D67D-4CB8-9A3A-9088685C5F77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B867F15C-D67D-4CB8-9A3A-9088685C5F77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B867F15C-D67D-4CB8-9A3A-9088685C5F77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B867F15C-D67D-4CB8-9A3A-9088685C5F77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{863FD347-C605-402C-94D3-BB44E2C1F60E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{863FD347-C605-402C-94D3-BB44E2C1F60E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{863FD347-C605-402C-94D3-BB44E2C1F60E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{863FD347-C605-402C-94D3-BB44E2C1F60E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E7D3A19-35AA-416B-91C1-CCF0293D5CB2}
+	EndGlobalSection
+EndGlobal
