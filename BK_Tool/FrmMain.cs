@@ -53,16 +53,16 @@ namespace BK_Tool
             this.cbxReceiveEncoding.Items.Clear();
             //this.cbxReceiveEncoding.Items.Add(System.Text.Encoding.Default.BodyName.ToUpper());
             this.cbxReceiveEncoding.Items.Add(System.Text.Encoding.UTF8.BodyName.ToUpper());
-            //this.cbxReceiveEncoding.Items.Add(System.Text.Encoding.ASCII.BodyName.ToUpper());
-            //this.cbxReceiveEncoding.Items.Add("16进制");
+            this.cbxReceiveEncoding.Items.Add(System.Text.Encoding.ASCII.BodyName.ToUpper());
+            this.cbxReceiveEncoding.Items.Add("16进制");
             this.cbxReceiveEncoding.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cbxReceiveEncoding.Text = System.Text.Encoding.UTF8.BodyName.ToUpper();
 
             this.cbxSendEncoding.Items.Clear();
             //this.cbxSendEncoding.Items.Add(System.Text.Encoding.Default.BodyName.ToUpper());
             this.cbxSendEncoding.Items.Add(System.Text.Encoding.UTF8.BodyName.ToUpper());
-            //this.cbxSendEncoding.Items.Add(System.Text.Encoding.ASCII.BodyName.ToUpper());
-            //this.cbxSendEncoding.Items.Add("16进制");
+            this.cbxSendEncoding.Items.Add(System.Text.Encoding.ASCII.BodyName.ToUpper());
+            this.cbxSendEncoding.Items.Add("16进制");
             this.cbxSendEncoding.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cbxSendEncoding.Text = System.Text.Encoding.UTF8.BodyName.ToUpper();
 
@@ -330,12 +330,16 @@ namespace BK_Tool
                 if (ConfigurationManager.AppSettings["Equid"].ToString() == "TDDB")
                 {
                     TDDBDataHandle dataHandle = new TDDBDataHandle();
-                    dataHandle.ChuLiOneHL7(data);
+                    txtSendContent.Text = dataHandle.ChuLiOneHL7(data);
+
+                    if (this.SendData() == false)
+                        return;
+                    this.sysStatusLabel2.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss fff") + "-发送成功";
                 }
                 else if (ConfigurationManager.AppSettings["Equid"].ToString() == "SFL")
                 {
                     SFLDataHandle dataHandle = new SFLDataHandle();
-                    dataHandle.ChuLiOneHL7(data);
+                    dataHandle.ChuLiOneHL7(data);                    
                 }
 
 

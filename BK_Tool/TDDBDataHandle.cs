@@ -25,12 +25,12 @@ namespace BK_Tool
         /// 对截取到的合格拼接串进行HL7协议处理
         /// </summary>
         /// <param name="ib_data">截取到的合格拼接串</param>
-        public void ChuLiOneHL7(string ib_data)
+        public string ChuLiOneHL7(string ib_data)
         {
             Common common = new Common();
             bool IsUpdate = false;
             strKey = DateTime.Now.ToString("yyyyMMddhhmmss");//报告单号
-
+            string strMsh = "";
             Maticsoft.Model.report_main_unaudit report_main_unaudit = new Maticsoft.Model.report_main_unaudit();
             Maticsoft.DAL.report_main_unaudit report_main_unauditDal = new Maticsoft.DAL.report_main_unaudit();
             Maticsoft.Model.report_detail_undudit report_detail1_unaudit = new Maticsoft.Model.report_detail_undudit();
@@ -75,35 +75,11 @@ namespace BK_Tool
                         break;
                     #endregion
 
-                    //#region 包含病人的看病信息。
-                    //case "PV1":
-                    //    //PV1|1|住院|外科^1^2|||||||||||||||||自费  “科室^房间^床号”
-                    //    //patType = arrayLine[2].ToString();//病人类型 => 样本类型
-                    //    report_main.SampleType = arrayLine[2].ToString();
-                    //    try
-                    //    {
-                    //        //deptName = arrayLine[3].Split('^')[0];//科室
-                    //        //roomNo = arrayLine[3].Split('^')[1];//房间
-                    //        //bedNo = arrayLine[3].Split('^')[2];//床号
-                    //        bedNo = arrayLine[3].Split('^')[0];//房间
-                    //    }
-                    //    catch (Exception)
-                    //    {
-                    //    }
-
-                    //    fbType = arrayLine[20].ToString();//费别
-
-                    //    report_main.PatType = patType;
-                    //    report_main.PatDept = deptName;
-                    //    report_main.RoomNo = roomNo;
-                    //    report_main.BedNo = bedNo;
-                    //    report_main.TestName = fbType;
-
-                    //    break;
-                    //#endregion
-
                     #region 仪器信息
-                    case "MSH":
+                    case "\vMSH":
+                        strMsh = arrayData[i].ToString().Replace("ORU^", "ACK^") +"\r";
+                        strMsh += "MSA|AA|1|Message accepted||||0|\r";
+                        strMsh += $"{Convert.ToChar(28)}\r";
                         break;
                     #endregion
 
@@ -284,11 +260,15 @@ namespace BK_Tool
                         }
                         break;
                     #endregion
+
                     default: break;
                 }
 
             }
             #endregion
+
+            return strMsh;
+
         }
         #endregion
     }

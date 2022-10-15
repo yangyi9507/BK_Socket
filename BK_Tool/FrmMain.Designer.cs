@@ -56,7 +56,6 @@ namespace BK_Tool
             this.label2 = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtSendContent = new System.Windows.Forms.RichTextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.sysNotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.sysContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -86,6 +85,7 @@ namespace BK_Tool
             this.btnClear = new System.Windows.Forms.LinkLabel();
             this.btnSelect = new System.Windows.Forms.LinkLabel();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtSendContent = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbxResult.SuspendLayout();
@@ -377,16 +377,6 @@ namespace BK_Tool
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(965, 94);
             this.panel3.TabIndex = 0;
-            // 
-            // txtSendContent
-            // 
-            this.txtSendContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSendContent.Location = new System.Drawing.Point(0, 0);
-            this.txtSendContent.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSendContent.Name = "txtSendContent";
-            this.txtSendContent.Size = new System.Drawing.Size(853, 94);
-            this.txtSendContent.TabIndex = 2;
-            this.txtSendContent.Text = "";
             // 
             // btnSend
             // 
@@ -701,6 +691,17 @@ namespace BK_Tool
             this.label6.Text = "编码格式";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtSendContent
+            // 
+            this.txtSendContent.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtSendContent.Location = new System.Drawing.Point(0, 0);
+            this.txtSendContent.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSendContent.Multiline = true;
+            this.txtSendContent.Name = "txtSendContent";
+            this.txtSendContent.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtSendContent.Size = new System.Drawing.Size(853, 90);
+            this.txtSendContent.TabIndex = 7;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -723,6 +724,7 @@ namespace BK_Tool
             this.panelTcpServer.ResumeLayout(false);
             this.panelTcpServer.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.sysContextMenu.ResumeLayout(false);
             this.sysToolBar.ResumeLayout(false);
             this.sysToolBar.PerformLayout();
@@ -765,7 +767,6 @@ namespace BK_Tool
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.RichTextBox txtSendContent;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.NotifyIcon sysNotifyIcon;
         private System.Windows.Forms.ContextMenuStrip sysContextMenu;
@@ -795,5 +796,6 @@ namespace BK_Tool
         private System.Windows.Forms.LinkLabel btnClear;
         private System.Windows.Forms.LinkLabel btnSelect;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtSendContent;
     }
 }
